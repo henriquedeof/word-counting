@@ -1,26 +1,35 @@
-# Project Name
+# Word Processing Application
 
-Brief description of the project.
+This project is a word processing application that counts words in a file based on specific criteria defined in a properties file.
 
 ## Table of Contents
+- [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Features](#features)
-- [Contributing](#contributing)
 
+## Features
+- Counts the number of words in a file that start with a specific character.
+- Filters words based on a minimum length specified in the properties file.
+- Logs the results using SLF4J and Logback.
+- Configurable via a properties file (wordCounting.properties).
+- Generates a fat JAR (uber JAR) with all dependencies included for easy execution.
 
 ## Installation
 
-Instructions on how to install and set up the project.
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/henriquedeof/word-counting.git
+    cd word-counting
+    ```
+
+2. Build the project using Gradle:
+    ```sh
+    ./gradlew shadowJar
+    ```
 
 ## Usage
 
-Examples and instructions on how to use the project.
-
-## Features
-
-List of key features.
-
-## Contributing
-
-Guidelines for contributing to the project.
+To run the application, use the following command:
+```sh
+java -jar build/libs/word-counting-1.0.0.jar <source-path> <properties-file-path>
+```
